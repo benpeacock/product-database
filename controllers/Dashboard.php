@@ -10,9 +10,11 @@ if (isset($_POST)) {
 
 } // end POST actions
 
-include_once '../html/inc/header.inc.php';
-include_once '../html/inc/yearlist.inc.php';
-echo '<div class="container"><h2>Editing: ' . $program['name'] . ', ' . $year['year'] . '</h2></div>';
+include '../html/inc/header.inc.php';
+include '../html/inc/yearlist.inc.php';
+echo '<div class="container"><h3>Editing: ' . $program['name'] . ', ' . $year['year'] . '</h3></div>';
+include '../html/inc/programform.inc.php';
+include '../html/inc/footer.inc.php';
 
 
 
