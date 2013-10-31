@@ -1,4 +1,5 @@
 <?php
+require_once '../config.php';
 if (isset($_GET['action'])) {
 	$action = $_GET['action'];
 
@@ -10,6 +11,8 @@ if (isset($_POST)) {
 } // end POST actions
 
 include_once '../html/inc/header.inc.php';
-echo 'display';
+include_once '../html/inc/yearlist.inc.php';
+echo '<div class="container"><h2>Editing: ' . $program['name'] . ', ' . $year['year'] . '</h2></div>';
+
 
 
