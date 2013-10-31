@@ -1,5 +1,10 @@
 <?php
 require '../config.php';
-include BASE . '/inc/header.inc.php';
-include BASE . '/views/login.php';
-include BASE . '/inc/footer.inc.php';
+// TESTING ONLY
+$logged_in = true;
+
+if ($logged_in == true) {
+	include ROOT . '/controllers/Dashboard.php';
+} else {
+	include ROOT . '/controllers/Login.php';
+}

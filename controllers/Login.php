@@ -9,3 +9,6 @@ if (isset($_GET['action'])) {
 	
 	
 }
+// no CSS because not including header yet
+
+include BASE . '/views/login.php';
