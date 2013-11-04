@@ -4,6 +4,7 @@ abstract class DatabaseObject {
 	
 	const DB_TABLE = 'abstract'; 
 	
+	// Not using this for anything yet...
 	public static function getObjectById($id, $type) {
 		$dbh = Database::getPdo();
 		$validTypes = array('user', 'program', 'country', 'question', 'answer');

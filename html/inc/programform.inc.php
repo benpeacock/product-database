@@ -10,7 +10,10 @@
 		<!-- Tab panes -->
 		<div class="tab-content">
 		  <div class="tab-pane" id="home">
-		  	<p>some content</p>
+		  	<button type="button" value="cancel">Cancel</button><button type="button" value="save">Save</button>
+		  	<label for="question1">Question 1</label>
+		  	<input type="text" name="question1" />
+		  	<button type="button" value="cancel">Cancel</button><button type="button" value="save">Save</button>
 		  </div>
 		  <div class="tab-pane" id="profile">
 		  	<p>foo</p>
