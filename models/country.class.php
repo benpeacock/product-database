@@ -1,6 +1,6 @@
 <?php
 
-class Country extends DatabaseObject {
+class Country {
 	
 	public $id;
 	public $name;

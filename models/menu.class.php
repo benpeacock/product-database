@@ -38,7 +38,7 @@ class Menu extends DatabaseObject {
         	echo '<ul class="dropdown-menu">';
         	$programs = self::programsByCountry($country['id']);
         	foreach ($programs as $program) {
-        		echo '<li><a href="' . $program['id'] . '">' . $program['name'] . '</a></li>';
+        		echo '<li><a href="?id=' . $program['id'] . '">' . $program['name'] . '</a></li>';
 			}
         	echo '</ul>';
       		echo '</li>';

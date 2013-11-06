@@ -13,8 +13,8 @@ abstract class DatabaseObject {
 		}
 		try {
 			$sql = "SELECT * FROM " . self::DB_TABLE . " WHERE id = :id";
-			$prepare = $dbh->prepare($sql);
-			$stmt = bindParam('id', $id, PDO::PARAM_INT);
+			$stmt = $dbh->prepare($sql);
+			$stmt->bindParam('id', $id, PDO::PARAM_INT);
 			$stmt->execute();
 			if ($type == 'user') {
 				$user = new User();
