@@ -22,7 +22,13 @@
 	</ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="mailto:bpeacock@academic-travel.com">Help</a></li>
-      <li><a href="logout">Log Out</a></li>
+      <?php 
+      if (isset($session->user_id)) {
+		echo '<li><a href="../controllers/Logout.php">Log Out</a></li>';
+		} else {
+		echo '<li><a href="../controllers/Login.php">Login</a></li>';
+		}
+      ?>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
