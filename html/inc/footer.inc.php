@@ -1,4 +1,4 @@
-		<footer>
+		<footer class="down40">
 		<p class="text-center">&copy; CET Academic Programs <?php echo date("Y"); ?></p>
 		</footer>
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>

@@ -14,7 +14,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
     <?php
-    $session->user_id = true; //testing only
+    isset($session->user_id);
     if (isset($session->user_id)) { 
 		Menu::makeMenu(); 
 	}

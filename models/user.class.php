@@ -16,10 +16,10 @@ class User extends DatabaseObject {
 	 * @param string $password
 	 * @return instance of User object from db
 	 */
-	public function authenticate($username='', $password='') {
+	public function authenticate($username, $password) {
 		$dbh = Database::getPdo();
 		try {
-				$sql = "SELECT * FROM user WHERE username = :username and password = :password LIMIT 1";
+				$sql = "SELECT * FROM users WHERE username = :username and password = :password LIMIT 1";
 				$stmt = $dbh->prepare($sql);
 				$stmt->bindParam(':username', $username, PDO::PARAM_STR);
 				$stmt->bindParam(':password', $password);
