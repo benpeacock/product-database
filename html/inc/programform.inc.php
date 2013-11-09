@@ -14,12 +14,12 @@
 		  <div class="tab-pane" id="dates">
 		  	<div class="container">
 		  		<div class="row">
-		  			<button type="button" class="btn btn-default" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>
+		  			<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>
 		  		</div>
 		  		<label for="question1">Question 1</label>
 		  		<input type="text" name="question1" />
 		  		<div class="row">
-		  			<button type="button" class="btn btn-default" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>
+		  			<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>
 		  		</div>
 		  	</div>
 		  </div>
