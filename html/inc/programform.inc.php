@@ -1,43 +1,32 @@
 <div class="container down40">
 	<form action="#" method="post"></form>
 		<!-- Nav tabs -->
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs"> 
 		<?php 
-		$tabs = array('Dates', 'Message', 'Academics', 'Life', 'People', 'Other');
+		$tabs = array('Dates', 'Message', 'Academics', 'Life', 'People', 'Other');  // replace this with results from db.
 		foreach ($tabs as $tab) {
-			echo '<li><a href="#' . strtolower($tab) . '" data-toggle="tab">' . $tab . '</a></li>';
+			echo '<li>';
+				echo '<a href="#' . strtolower($tab) . '" data-toggle="tab">' . $tab . '</a>';
+			echo '</li>';
 		}
 		?>
 		</ul>
-		<!-- Tab panes -->
 		<div class="tab-content">
-		  <div class="tab-pane" id="dates">
-		  	<div class="container">
-		  		<div class="row">
-		  			<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>
-		  		</div>
-		  		<label for="question1">Question 1</label>
-		  		<input type="text" name="question1" />
-		  		<div class="row">
-		  			<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>
-		  		</div>
-		  	</div>
-		  </div>
-		  <div class="tab-pane" id="message">
-		  	<p>foo</p>
-		  </div>
-		  <div class="tab-pane" id="academics">
-		  	<p>bar</p>
-		  </div>
-		  <div class="tab-pane" id="life">
-		  	<p>lorem</p>
-		  </div>
-		   <div class="tab-pane" id="people">
-		  	<p>lorem</p>
-		  </div>
-		   <div class="tab-pane" id="other">
-		  	<p>lorem</p>
-		  </div>
+		<?php
+		foreach ($tabs as $tab) {
+					echo '<div class="tab-pane" id="' . strtolower($tab) . '">'; // This gets the individual tabs.
+						echo '<div class="container">'; // This positions content within the tab
+							echo '<div class="row">'; // Row for cancel/save buttons at top of questions
+								echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>';
+							echo '</div>'; // end top row of buttons
+							echo 'Where questions go';
+							echo '<div class="row">'; // begin bottom row of buttons
+								echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>';
+							echo '</div>'; // end bottom row of buttons
+						echo '</div>'; // end container
+					echo '</div>'; //end tab-pane
+		}
+		?>
 		</div>
 	</form>
 </div>
