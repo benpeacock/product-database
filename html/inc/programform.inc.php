@@ -19,7 +19,8 @@
 							echo '<div class="row">'; // Row for cancel/save buttons at top of questions
 								echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>';
 							echo '</div>'; // end top row of buttons
-							echo 'Where questions go';
+							echo 'd';
+							
 							echo '<div class="row">'; // begin bottom row of buttons
 								echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>';
 							echo '</div>'; // end bottom row of buttons

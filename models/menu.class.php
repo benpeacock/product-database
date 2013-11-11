@@ -5,7 +5,7 @@ class Menu extends DatabaseObject {
 	private static function getCountries() {
 		$dbh = Database::getPdo();
 		try {
-			$sql = "SELECT * FROM countries ORDER BY name";
+			$sql = "SELECT * FROM country ORDER BY name";
 			$stmt = $dbh->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll();
@@ -18,7 +18,7 @@ class Menu extends DatabaseObject {
 	private static function programsByCountry($country_id) {
 		$dbh = Database::getPdo();
 		try {
-			$sql = "select * from programs where country = :country_id order by name";
+			$sql = "SELECT * FROM program WHERE country = :country_id ORDER BY name";
 			$stmt = $dbh->prepare($sql);
 			$stmt->bindParam(':country_id', $country_id, PDO::PARAM_INT);
 			$stmt->execute();

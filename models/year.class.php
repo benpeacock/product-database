@@ -5,12 +5,12 @@ class Year extends DatabaseObject {
 	public $id;
 	public $year;
 	
-	const DB_TABLE = 'years';
+	const DB_TABLE = 'year';
 	
 	public static function getYearList() {
 		$dbh = Database::getPdo();
 		try {
-			$sql = "SELECT * FROM years";
+			$sql = "SELECT * FROM year";
 			$stmt = $dbh->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll();
@@ -23,7 +23,7 @@ class Year extends DatabaseObject {
 	public static function getyearObject($id) {
 		$dbh = Database::getPdo();
 		try {
-			$sql = "SELECT * FROM years WHERE id = :id";
+			$sql = "SELECT * FROM year WHERE id = :id";
 			$stmt = $dbh->prepare($sql);
 			$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 			$stmt->execute();

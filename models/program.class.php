@@ -9,7 +9,7 @@ class Program extends DatabaseObject {
 	public static function getProgramObject($id) {
 		$dbh = Database::getPdo();
 		try {
-			$sql = "SELECT * FROM programs WHERE id = :id";
+			$sql = "SELECT * FROM program WHERE id = :id";
 			$stmt = $dbh->prepare($sql);
 			$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 			$stmt->execute();
