@@ -21,6 +21,21 @@
 	?>
 	</ul>
     <ul class="nav navbar-nav navbar-right">
+    <?php 
+    if (isset($_GET['id']) && isset($_GET['year']) && !isset($_GET['action'])) {
+    	echo '<li><a href="';
+    	echo $_SERVER['PHP_SELF'];
+    	echo '?id=' . $_GET['id'];
+    	echo '&year=' . $_GET['year'];
+    	echo '&action=edit">Edit</a></li>';
+    } elseif (isset($_GET['action']) && $_GET['action'] == 'edit') {
+		echo '<li><a href="';
+		echo $_SERVER['PHP_SELF'];
+    	echo '?id=' . $_GET['id'];
+    	echo '&year=' . $_GET['year'];
+    	echo '">Display</a></li>';
+    }
+    ?>
       <li><a href="mailto:bpeacock@academic-travel.com">Help</a></li>
       <?php 
       if (isset($session->user_id)) {
