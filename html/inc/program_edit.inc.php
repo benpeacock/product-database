@@ -3,7 +3,7 @@ foreach ($tabs as $tab) {
 	echo '<div class="tab-pane" id="' . $tab['name'] . '">';
 	echo '<div class="container">';
 	echo '<div class="row">';
-	echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>';
+	echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="submit" class="btn btn-primary" name="submit">Save</button>';
 	echo '</div>';
 	echo '<div class="form-group">';
 	$questions = Question::getQuestions($tab['id']);
@@ -29,7 +29,7 @@ foreach ($tabs as $tab) {
 	}
 	echo '</div>';
 	echo '<div class="row">';
-	echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="button" class="btn btn-primary" value="save">Save</button>';
+	echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="submit" class="btn btn-primary" name="submit">Save</button>';
 	echo '</div>';
 	echo '</div>';
 	echo '</div>';

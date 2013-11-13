@@ -1,5 +1,5 @@
 <div class="container down40">
-	<form class="form-horizontal" action="#" method="post"></form>
+	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs"> 
 		<?php 
@@ -14,10 +14,9 @@
 		<div class="tab-content">
 		<?php
 		if (isset($_GET['action']) && $_GET['action'] == 'edit') {
-			
 			include 'program_edit.inc.php';
 		} else {
-		echo 'flurm';
+			include 'program_display.inc.php';
 		}
 		?>
 		</div>
