@@ -32,4 +32,11 @@ class Database {
 		}
 	}
 
+	public static function buildUrl() {
+		echo $_SERVER['PHP_SELF'];
+		if (isset($_GET['id'])) { echo '?id=' . $_GET['id']; }
+		if (isset($_GET['year'])) { echo '&year=' . $_GET['year']; }
+		if (isset($_GET['action'])) {echo '&action=' . $_GET['action']; }
+	}
+	
 } //end Database class
