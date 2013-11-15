@@ -55,6 +55,8 @@ class Answer {
 			$stmt->bindParam(':question', $question, PDO::PARAM_INT);
 			$stmt->bindParam(':answer', $answer);
 			$stmt->execute();
+			$result = $stmt->rowCount();
+			return $result;
 		} catch (PDOException $e) {
 			echo 'Unable to insert answer ' . $e->getMessage();
 		}
@@ -68,6 +70,8 @@ class Answer {
 			$stmt->bindParam(':answer', $answer);
 			$stmt->bindParam(':check', $check);
 			$stmt->execute();
+			$result = $stmt->rowCount();
+			return $result;
 		} catch (PDOException $e) {
 			echo 'Unable to update answer ' . $e->getMessage();
 		}
@@ -75,12 +79,14 @@ class Answer {
 	
 	public static function saveAnswer($program, $year, $question, $answer) {
 		$dbh = Database::getPdo();
-			$check = self::checkAnswer($program, $year, $question);
-			if (!empty($check)) {
-				$action = self::updateAnswer($program, $year, $question, $answer);
-			} elseif (empty($check)) {
-				$action = self::insertAnswer($program, $year, $question, $answer);
-			}
+		$check = self::checkAnswer($program, $year, $question);
+		if (!empty($check)) {
+			$result = self::updateAnswer($answer, $check);
+			return 'updated';
+		} elseif (empty($check)) {
+			$result = self::insertAnswer($program, $year, $question, $answer);
+			return 'inserted';
+		}
 	}
 } // end Answer class
 
