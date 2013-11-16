@@ -1,5 +1,5 @@
 <div class="container down40">
-	<form action="<?php Database::buildUrl(); ?>" method="post">
+	<form class="form-inline" action="<?php Database::buildUrl(); ?>" method="post">
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs"> 
 		<?php 
