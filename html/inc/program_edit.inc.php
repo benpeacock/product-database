@@ -18,7 +18,7 @@ foreach ($tabs as $tab) {
 				break;
 			case (2):
 				echo '<label>' . $question['question'] . '</label>';
-				echo '<textarea class="form-control" name="' . $question['id'] . '" value="' . $answer->answer . '"></textarea>';
+				echo '<textarea class="form-control marginbottom20" name="' . $question['id'] . '">' . $answer->answer . '</textarea>';
 				break;
 			case (3):
 				echo '<label class="col-sm-3 control-label">' . $question['question'] . '</label>';

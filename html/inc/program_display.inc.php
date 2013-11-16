@@ -2,7 +2,7 @@
 foreach ($tabs as $tab) {
 	echo '<div class="tab-pane" id="' . $tab['name'] . '">';
 	echo '<div class="container">';
-	echo '<div>';
+	echo '<div class="down40">';
 	$questions = Question::getQuestions($tab['id']);
 	foreach ($questions as $question) {
 		$answer = Answer::getAnswer($program->id, $year->id, $question['id']);
