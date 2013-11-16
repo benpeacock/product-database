@@ -15,7 +15,7 @@ foreach ($tabs as $tab) {
 				break;
 			case (2):
 				echo '<label>' . $question['question'] . '</label>';
-				echo $answer->answer;
+				echo '<div class="marginbottom20 col-sm-9">' . $answer->answer . '</div>';
 				break;
 			case (3):
 				echo '<label class="col-sm-3 control-label">' . $question['question'] . '</label>';
