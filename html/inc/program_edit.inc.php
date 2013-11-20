@@ -1,3 +1,25 @@
+<script type="text/javascript">
+function copyPrev()
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","copyPrev.php?q="+int,true);
+xmlhttp.send();
+}
+</script>
 <?php
 foreach ($tabs as $tab) {
 	echo '<div class="tab-pane" id="' . $tab['name'] . '">';
@@ -18,7 +40,7 @@ foreach ($tabs as $tab) {
 				break;
 			case (2):
 				$url = Database::buildLateUrl();
-				echo '<label>' . $question['question'] . ' <a href="' . $url . '&copy=' . $question['id'] . '">Copy from Last Year</a></label>';
+				echo '<label>' . $question['question'] . '</label> <a href="' . $url . '&copy=' . $question['id'] . '<Copy</a>';
 				echo '<textarea class="form-control marginbottom20" name="' . $question['id'] . '">' . $answer->answer . '</textarea>';
 				break;
 			case (3):
