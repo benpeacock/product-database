@@ -17,7 +17,8 @@ foreach ($tabs as $tab) {
 				echo '</div>';
 				break;
 			case (2):
-				echo '<label>' . $question['question'] . '</label>';
+				$url = Database::buildLateUrl();
+				echo '<label>' . $question['question'] . ' <a href="' . $url . '&copy=' . $question['id'] . '">Copy from Last Year</a></label>';
 				echo '<textarea class="form-control marginbottom20" name="' . $question['id'] . '">' . $answer->answer . '</textarea>';
 				break;
 			case (3):
@@ -27,13 +28,10 @@ foreach ($tabs as $tab) {
 				<div class="input-group col-sm-6">
 			    	<input type="date" class="form-control" name="<?php echo $question['id']; ?>" value="<?php echo $answer->answer; ?>">
 			      	<div class="input-group-btn">
-				        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+				        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Copy <span class="caret"></span></button>
 				        <ul class="dropdown-menu pull-right">
-				          <li><a href="#">Action</a></li>
-				          <li><a href="#">Another action</a></li>
-				          <li><a href="#">Something else here</a></li>
-				          <li class="divider"></li>
-				          <li><a href="#">Separated link</a></li>
+				          <li><a href="#">Copy from last year</a></li>
+				          <li><a href="#">Copy another program</a></li>
 				        </ul>
 			      </div><!-- /btn-group -->
 			    </div><!-- /input-group -->

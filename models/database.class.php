@@ -39,4 +39,12 @@ class Database {
 		if (isset($_GET['action'])) {echo '&action=' . $_GET['action']; }
 	}
 	
+	public static function buildLateUrl() {
+		$url = $_SERVER['PHP_SELF'];
+		if (isset($_GET['id'])) { $url .= '?id=' . $_GET['id']; }
+		if (isset($_GET['year'])) { $url .= '&year=' . $_GET['year']; }
+		if (isset($_GET['action'])) { $url .= '&action=' . $_GET['action']; }
+		return $url;
+	}
+	
 } //end Database class
