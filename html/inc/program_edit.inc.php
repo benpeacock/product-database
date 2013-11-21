@@ -1,6 +1,6 @@
 <script type="text/javascript">
 function copyLast() {
-	$('#copylast').load("testdata.txt");
+	$('#copylast').load("CopyLast.php");
 }
 </script>
 <?php
