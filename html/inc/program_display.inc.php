@@ -8,9 +8,11 @@ foreach ($tabs as $tab) {
 		$answer = Answer::getAnswer($program->id, $year->id, $question['id']);
 		switch ($question['type']) {
 			case (1):
-				echo '<label class="control-label">' . $question['question'] . '</label>';
-				echo '<div class="marginbottom20">';
+				echo '<div class="row marginbottom20">';
+				echo '<label class="col-sm-3 control-label">' . $question['question'] . '</label>';
+				echo '<div class="col-sm-9">';
 				echo $answer->answer;
+				echo '</div>';
 				echo '</div>';
 				break;
 			case (2):
@@ -24,6 +26,7 @@ foreach ($tabs as $tab) {
 				echo $answer->answer;
 				echo '</div>';
 				echo '</div>';
+				break;
 		}
 	}
 	echo '</div>';

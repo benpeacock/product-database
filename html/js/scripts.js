@@ -10,3 +10,6 @@ $('#topic3').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
+function copyLast() {
+	$('#copylast').load("testdata.txt");
+}
