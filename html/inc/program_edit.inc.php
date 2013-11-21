@@ -4,11 +4,12 @@ function copyLast() {
 }
 </script>
 <?php
+$url = Database::buildLateUrl();
 foreach ($tabs as $tab) {
 	echo '<div class="tab-pane" id="' . $tab['name'] . '">';
 	echo '<div class="container">';
 	echo '<div class="row">';
-	echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="submit" class="btn btn-primary" name="submit">Save</button>';
+	echo '<button type="button" onclick="window.location.reload()" class="btn btn-default margin15" value="cancel">Cancel</button><button type="submit" class="btn btn-primary" name="submit">Save</button>';
 	echo '</div>';
 	echo '<div class="form-group">';
 	$questions = Question::getQuestions($tab['id']);
@@ -22,7 +23,6 @@ foreach ($tabs as $tab) {
 				echo '</div>';
 				break;
 			case (2):
-				$url = Database::buildLateUrl();
 				echo '<label>' . $question['question'] . '</label> <button type="button" onclick="copyLast()" class="btn">Copy</button>';
 				echo '<textarea class="form-control marginbottom20" id="copylast" name="' . $question['id'] . '">' . $answer->answer . '</textarea>';
 				break;
@@ -47,7 +47,7 @@ foreach ($tabs as $tab) {
 	}
 	echo '</div>';
 	echo '<div class="row">';
-	echo '<button type="button" class="btn btn-default margin15" value="cancel">Cancel</button><button type="submit" class="btn btn-primary" name="submit">Save</button>';
+	echo '<button type="button" onclick="window.location.reload()" class="btn btn-default margin15" value="cancel">Cancel</button><button type="submit" class="btn btn-primary" name="submit">Save</button>';
 	echo '</div>';
 	echo '</div>';
 	echo '</div>';
