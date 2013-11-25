@@ -1,8 +1,4 @@
-<script type="text/javascript">
-function copyLast() {
-	$('#copylast').load("CopyLast.php");
-}
-</script>
+
 <?php
 $url = Database::buildLateUrl();
 foreach ($tabs as $tab) {
@@ -17,14 +13,22 @@ foreach ($tabs as $tab) {
 		$answer = Answer::getAnswer($program->id, $year->id, $question['id']);
 		switch ($question['type']) {
 			case (1):
-				echo '<label class="col-sm-3 control-label">' . $question['question'] . '</label>';
-				echo '<div class="col-sm-9 marginbottom20">';
-				echo '<input type="text" name="' . $question['id'] . '" class="form-control" value="' . $answer->answer . '">';
-				echo '</div>';
+				?>
+				<label class="col-sm-3 control-label"><?php echo $question['question']; ?></label>
+				<div class="col-sm-9 marginbottom20">
+				<input type="text" name="<?php echo $question['id']; ?>" class="form-control" value="<?php echo $answer->answer; ?>">
+				</div>
+				<?php
 				break;
 			case (2):
-				echo '<label>' . $question['question'] . '</label> <button type="button" onclick="copyLast()" class="btn">Copy</button>';
-				echo '<textarea class="form-control marginbottom20" id="copylast" name="' . $question['id'] . '">' . $answer->answer . '</textarea>';
+				?>
+				<label><?php echo $question['question']; ?></label>
+				<button type="button" name="<?php echo $question['id']; ?>" onclick="copyLast()" class="btn">Copy</button>
+				<textarea class="form-control marginbottom20" id="copylast" name="<?php echo $question['id']; ?>">
+					<?php echo $answer->answer; ?>
+				</textarea>
+				<input type="hidden" id="question" value="<?php echo $question['id']; ?>"/>
+				<?php
 				break;
 			case (3):
 				?>
