@@ -24,8 +24,7 @@ foreach ($tabs as $tab) {
 				?>
 				<label><?php echo $question['question']; ?></label>
 				<button type="button" name="<?php echo $question['id']; ?>" onclick="copyLast()" class="btn">Copy</button>
-				<textarea class="form-control marginbottom20" id="copylast" name="<?php echo $question['id']; ?>">
-					<?php echo $answer->answer; ?>
+				<textarea class="form-control marginbottom20" id="copylast" name="<?php echo $question['id']; ?>"><?php echo $answer->answer; ?>
 				</textarea>
 				<input type="hidden" id="question" value="<?php echo $question['id']; ?>"/>
 				<?php

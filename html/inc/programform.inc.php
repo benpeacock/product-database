@@ -2,7 +2,7 @@
 	<form class="form-inline" action="<?php Database::buildUrl(); ?>" method="post">
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs"> 
-		<?php 
+		<?php
 		$tabs = Tab::getTabs();
 		foreach ($tabs as $tab) {
 			echo '<li>';
