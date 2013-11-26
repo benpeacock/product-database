@@ -23,8 +23,8 @@ foreach ($tabs as $tab) {
 			case (2):
 				?>
 				<label><?php echo $question['question']; ?></label>
-				<button type="button" name="<?php echo $question['id']; ?>" onclick="copyLast()" class="btn">Copy</button>
-				<textarea class="form-control marginbottom20" id="copylast" name="<?php echo $question['id']; ?>"><?php echo $answer->answer; ?></textarea>
+				<div class="col-sm-11"><textarea class="form-control marginbottom20" id="copylast" name="<?php echo $question['id']; ?>"><?php echo $answer->answer; ?></textarea></div>
+				<div class="col-sm-1"><button type="button" name="<?php echo $question['id']; ?>" onclick="copyLast()" class="btn">Copy</button></div>
 				<input type="hidden" id="question" value="<?php echo $question['id']; ?>"/>
 				<?php
 				break;
@@ -38,7 +38,6 @@ foreach ($tabs as $tab) {
 				        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Copy <span class="caret"></span></button>
 				        <ul class="dropdown-menu pull-right">
 				          <li><a href="#">Copy from last year</a></li>
-				          <li><a href="#">Copy another program</a></li>
 				        </ul>
 			      </div><!-- /btn-group -->
 			    </div><!-- /input-group -->
