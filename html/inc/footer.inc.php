@@ -5,10 +5,9 @@
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script src="/js/bootstrap.js"></script>
 		<script type="text/javascript">
-			function copyLast() {
+			function copyLast(questionId) {
 				var url = window.location.search;
-				var question = $('#question').val();
-				$('#copylast').load("CopyLast.php" + url + "&question=" + question);
+				$('#copylast-' + questionId).load("CopyLast.php" + url + "&question=" + questionId);
 			}
 		</script>
 	</body>

@@ -23,9 +23,8 @@ foreach ($tabs as $tab) {
 			case (2):
 				?>
 				<label><?php echo $question['question']; ?></label>
-				<div class="col-sm-11"><textarea class="form-control marginbottom20" id="copylast" name="<?php echo $question['id']; ?>"><?php echo $answer->answer; ?></textarea></div>
-				<div class="col-sm-1"><button type="button" name="<?php echo $question['id']; ?>" onclick="copyLast()" class="btn">Copy</button></div>
-				<input type="hidden" id="question" value="<?php echo $question['id']; ?>"/>
+				<div class="col-sm-11"><textarea class="form-control marginbottom20" id="copylast-<?php echo $question['id']; ?>" name="<?php echo $question['id']; ?>"><?php echo $answer->answer; ?></textarea></div>
+				<div class="col-sm-1"><button type="button" name="<?php echo $question['id']; ?>" onclick="copyLast('<?php echo $question['id']; ?>')" class="btn">Copy</button></div>
 				<?php
 				break;
 			case (3):
